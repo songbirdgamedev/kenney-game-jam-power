@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/action_light_box.tscn" id="5_p6rmu"]
 [ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/next_level_door.tscn" id="6_34hum"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iywne"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvta"]
 texture = ExtResource("1_jjvta")
 0:0/0 = 0
 1:0/0 = 0
@@ -615,7 +615,7 @@ texture = ExtResource("1_jjvta")
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mnpy"]
 texture = ExtResource("2_3mnpy")
 1:0/0 = 0
 2:0/0 = 0
@@ -1016,8 +1016,8 @@ texture = ExtResource("2_3mnpy")
 
 [sub_resource type="TileSet" id="TileSet_u5sy4"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_iywne")
-sources/2 = SubResource("TileSetAtlasSource_p57ef")
+sources/1 = SubResource("TileSetAtlasSource_jjvta")
+sources/2 = SubResource("TileSetAtlasSource_3mnpy")
 
 [node name="Level0" type="Node2D"]
 

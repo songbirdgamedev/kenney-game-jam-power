@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bgyg2hgondto8"]
+[gd_scene load_steps=13 format=3 uid="uid://bgyg2hgondto8"]
 
 [ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="1_iplx1"]
 [ext_resource type="Script" uid="uid://cguvuyeynasqi" path="res://scripts/next_level_door.gd" id="1_yphqt"]
+[ext_resource type="Texture2D" uid="uid://bceoxs3k8dnr4" path="res://assets/sprites/input/tilemap_white.png" id="3_1qxk8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yphqt"]
 atlas = ExtResource("1_iplx1")
@@ -50,6 +51,21 @@ size = Vector2(16, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yphqt"]
 size = Vector2(10, 13)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_pii2p"]
+atlas = ExtResource("3_1qxk8")
+region = Rect2(323, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6vtbs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pii2p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="NextLevelDoor" type="StaticBody2D"]
 script = ExtResource("1_yphqt")
 
@@ -70,4 +86,10 @@ position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_yphqt")
 debug_color = Color(0.787048, 0.373555, 0.569831, 0.42)
 
+[node name="InputPrompt" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -24)
+sprite_frames = SubResource("SpriteFrames_6vtbs")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
