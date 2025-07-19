@@ -1,6 +1,7 @@
 extends Node2D
 
 
+@onready var buttons: Node2D = $"../Buttons"
 @onready var lights: Node2D = $"."
 
 var num_lights: int = 0
@@ -11,10 +12,18 @@ signal all_lights_on()
 
 
 func _ready() -> void:
+	for button in buttons.get_children():
+		button.button_pressed.connect(_reset_changed)
+
 	for light in lights.get_children():
 		num_lights += 1
 		light.turned_on.connect(_light_on)
 		light.turned_off.connect(_light_off)
+
+
+func _reset_changed() -> void:
+	for light in lights.get_children():
+		light.changed = false
 
 
 func _light_on() -> void:

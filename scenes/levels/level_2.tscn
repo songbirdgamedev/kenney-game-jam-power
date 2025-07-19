@@ -2057,7 +2057,9 @@ position = Vector2(40, 160)
 [node name="Player" parent="." instance=ExtResource("5_qsp8v")]
 position = Vector2(56, 160)
 
-[node name="Button" parent="." instance=ExtResource("6_ibugp")]
+[node name="Buttons" type="Node2D" parent="."]
+
+[node name="Button" parent="Buttons" instance=ExtResource("6_ibugp")]
 position = Vector2(104, 160)
 
 [node name="Lights" type="Node2D" parent="."]
@@ -2093,5 +2095,5 @@ position = Vector2(168, 112)
 [node name="LightBox3" parent="Lights" instance=ExtResource("9_nt80m")]
 position = Vector2(200, 80)
 
-[connection signal="button_pressed" from="Button" to="Lights/ActionLightBox" method="turn_on_off"]
+[connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
 [connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]

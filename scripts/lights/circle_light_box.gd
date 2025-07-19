@@ -15,6 +15,9 @@ func _turn_on() -> void:
 	await get_tree().create_timer(0.5).timeout
 	turned_on.emit()
 
+	vertical.set_deferred("disabled", true)
+	horizontal.set_deferred("disabled", true)
+
 
 func _turn_off() -> void:
 	is_on = false
@@ -24,3 +27,6 @@ func _turn_off() -> void:
 
 	await get_tree().create_timer(0.5).timeout
 	turned_off.emit()
+
+	vertical.set_deferred("disabled", true)
+	horizontal.set_deferred("disabled", true)
