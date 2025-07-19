@@ -14,7 +14,14 @@ signal turned_on()
 signal turned_off()
 
 
-func turn_on_off() -> void:
+func _on_button_press() -> void:
+	await get_tree().create_timer(0.1).timeout
+	turn_on_off(true)
+
+
+func turn_on_off(first: bool) -> void:
+	# handle first case differently to subsequent cases
+	# subsequent cases triggering a function light on can also turn lights that have been changed already
 	if changed:
 		return
 

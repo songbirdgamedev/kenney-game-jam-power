@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d137oywww3ent"]
+[gd_scene load_steps=16 format=4 uid="uid://d137oywww3ent"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_2bnyt"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_n6eey"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_t4txi"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_apo5x"]
 [ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_josfm"]
-[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="8_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://b8miem7rjpgn1" path="res://scenes/lights/cross_light_box.tscn" id="9_2bnyt"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_vmg1d"]
 
@@ -2060,40 +2059,37 @@ position = Vector2(56, 160)
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button" parent="Buttons" instance=ExtResource("6_apo5x")]
-position = Vector2(104, 160)
+position = Vector2(160, 160)
 
 [node name="Lights" type="Node2D" parent="."]
 script = ExtResource("7_josfm")
 
-[node name="ActionLightBox" parent="Lights" instance=ExtResource("8_lgrx1")]
-position = Vector2(120, 64)
-
 [node name="CrossLightBox" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(136, 48)
-
-[node name="CrossLightBox2" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(152, 64)
-
-[node name="CrossLightBox3" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(168, 80)
-
-[node name="CrossLightBox4" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(184, 64)
+position = Vector2(160, 80)
 
 [node name="LightBox" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(200, 48)
-
-[node name="CrossLightBox5" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(152, 96)
-
-[node name="CrossLightBox6" parent="Lights" instance=ExtResource("9_2bnyt")]
-position = Vector2(184, 96)
+position = Vector2(144, 64)
 
 [node name="LightBox2" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(136, 112)
+position = Vector2(176, 64)
 
 [node name="LightBox3" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(200, 112)
+position = Vector2(144, 96)
 
-[connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
+[node name="LightBox4" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(176, 96)
+
+[node name="LightBox5" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(128, 48)
+
+[node name="LightBox6" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(192, 48)
+
+[node name="LightBox7" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(128, 112)
+
+[node name="LightBox8" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(192, 112)
+
+[connection signal="button_pressed" from="Buttons/Button" to="Lights/CrossLightBox" method="_on_button_press"]
 [connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]

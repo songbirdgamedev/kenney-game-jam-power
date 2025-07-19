@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cwm8lr6qybfvj"]
+[gd_scene load_steps=17 format=4 uid="uid://cwm8lr6qybfvj"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_glw47"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_4wsov"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_ov8fk"]
 [ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_pmra4"]
 [ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="8_1bx01"]
+[ext_resource type="PackedScene" uid="uid://c8foaxkrcxhbn" path="res://scenes/lights/circle_light_box.tscn" id="10_glw47"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_xt2o7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brxtv"]
@@ -2059,13 +2060,19 @@ position = Vector2(56, 160)
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(136, 160)
+position = Vector2(128, 160)
 
 [node name="Button2" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(184, 160)
+position = Vector2(192, 160)
+
+[node name="Button3" parent="Buttons" instance=ExtResource("6_ov8fk")]
+position = Vector2(160, 160)
 
 [node name="Lights" type="Node2D" parent="."]
 script = ExtResource("7_pmra4")
+
+[node name="CircleLightBox" parent="Lights" instance=ExtResource("10_glw47")]
+position = Vector2(160, 80)
 
 [node name="ActionLightBox" parent="Lights" instance=ExtResource("8_1bx01")]
 position = Vector2(144, 80)
@@ -2074,44 +2081,42 @@ position = Vector2(144, 80)
 position = Vector2(176, 80)
 
 [node name="LightBox" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 80)
-
-[node name="LightBox2" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 96)
-
-[node name="LightBox3" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(144, 96)
-
-[node name="LightBox4" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(128, 96)
-
-[node name="LightBox5" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(128, 80)
-
-[node name="LightBox6" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(128, 64)
 
-[node name="LightBox7" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox2" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(144, 64)
 
-[node name="LightBox8" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox3" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(160, 64)
 
-[node name="LightBox9" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox4" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(176, 64)
 
-[node name="LightBox10" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(176, 96)
-
-[node name="LightBox11" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox5" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(192, 64)
 
-[node name="LightBox12" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox6" parent="Lights" instance=ExtResource("10_xt2o7")]
+position = Vector2(128, 80)
+
+[node name="LightBox7" parent="Lights" instance=ExtResource("10_xt2o7")]
+position = Vector2(160, 96)
+
+[node name="LightBox8" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(192, 80)
 
-[node name="LightBox13" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="LightBox9" parent="Lights" instance=ExtResource("10_xt2o7")]
+position = Vector2(128, 96)
+
+[node name="LightBox10" parent="Lights" instance=ExtResource("10_xt2o7")]
+position = Vector2(144, 96)
+
+[node name="LightBox11" parent="Lights" instance=ExtResource("10_xt2o7")]
+position = Vector2(176, 96)
+
+[node name="LightBox12" parent="Lights" instance=ExtResource("10_xt2o7")]
 position = Vector2(192, 96)
 
 [connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
 [connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox2" method="_on_button_press"]
+[connection signal="button_pressed" from="Buttons/Button3" to="Lights/CircleLightBox" method="_on_button_press"]
 [connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]
