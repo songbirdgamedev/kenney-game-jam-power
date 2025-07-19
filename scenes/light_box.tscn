@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://iv21m3j4oty4"]
+[gd_scene load_steps=12 format=3 uid="uid://dll1oho5dtiyk"]
 
 [ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="1_c3pdv"]
+[ext_resource type="Script" uid="uid://bedlih1h033v5" path="res://scripts/light_box.gd" id="1_e35c7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c3pdv"]
 atlas = ExtResource("1_c3pdv")
@@ -65,7 +66,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phyax"]
 size = Vector2(14, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e35c7"]
+size = Vector2(14, 14)
+
 [node name="LightBox" type="StaticBody2D"]
+script = ExtResource("1_e35c7")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
@@ -78,3 +83,10 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_phyax")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_e35c7")
+debug_color = Color(0.72794, 0.472647, 0.115298, 0.42)

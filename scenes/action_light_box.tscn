@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2811d7bgl5f6"]
+[gd_scene load_steps=12 format=3 uid="uid://f1mmmks5drmq"]
 
 [ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="1_021rh"]
 [ext_resource type="Script" uid="uid://n31jc4hact0r" path="res://scripts/action_light_box.gd" id="1_pkf8y"]
@@ -66,6 +66,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phyax"]
 size = Vector2(14, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkf8y"]
+
 [node name="ActionLightBox" type="StaticBody2D"]
 script = ExtResource("1_pkf8y")
 
@@ -78,3 +80,11 @@ autoplay = "off"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_phyax")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_pkf8y")
+disabled = true
+debug_color = Color(0.640818, 0.521198, 0.162989, 0.42)

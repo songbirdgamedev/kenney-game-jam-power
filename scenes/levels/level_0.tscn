@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_3mnpy"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="3_6ayib"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="4_65guy"]
-[ext_resource type="PackedScene" path="res://scenes/action_light_box.tscn" id="5_p6rmu"]
+[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/action_light_box.tscn" id="5_p6rmu"]
 [ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/next_level_door.tscn" id="6_34hum"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvta"]
@@ -1045,3 +1045,4 @@ position = Vector2(200, 96)
 position = Vector2(280, 160)
 
 [connection signal="button_pressed" from="Button" to="ActionLightBox" method="turn_on"]
+[connection signal="turned_on" from="ActionLightBox" to="NextLevelDoor" method="open_door"]
