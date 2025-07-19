@@ -1,49 +1,59 @@
-[gd_scene load_steps=12 format=3 uid="uid://dll1oho5dtiyk"]
+[gd_scene load_steps=15 format=3 uid="uid://dll1oho5dtiyk"]
 
-[ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="1_c3pdv"]
-[ext_resource type="Script" uid="uid://bedlih1h033v5" path="res://scripts/light_box.gd" id="1_e35c7"]
+[ext_resource type="Script" uid="uid://bedlih1h033v5" path="res://scripts/lights/light_box.gd" id="1_q7qh4"]
+[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_afttm"]
+[ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="3_uwh1n"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3pdv"]
-atlas = ExtResource("1_c3pdv")
-region = Rect2(153, 51, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3ikp"]
+atlas = ExtResource("2_afttm")
+region = Rect2(144, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_e35c7"]
-atlas = ExtResource("1_c3pdv")
-region = Rect2(153, 34, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8ww1"]
+atlas = ExtResource("2_afttm")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyax"]
+atlas = ExtResource("2_afttm")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duc2v"]
+atlas = ExtResource("2_afttm")
+region = Rect2(144, 48, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bhb4k"]
-atlas = ExtResource("1_c3pdv")
+atlas = ExtResource("3_uwh1n")
 region = Rect2(153, 51, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tvkj6"]
-atlas = ExtResource("1_c3pdv")
+atlas = ExtResource("3_uwh1n")
 region = Rect2(153, 17, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcw75"]
-atlas = ExtResource("1_c3pdv")
+atlas = ExtResource("3_uwh1n")
 region = Rect2(153, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6puq"]
-atlas = ExtResource("1_c3pdv")
+atlas = ExtResource("3_uwh1n")
 region = Rect2(153, 34, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o8ww1"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c3pdv")
-}],
-"loop": true,
-"name": &"off",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_l3ikp")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_e35c7")
+"texture": SubResource("AtlasTexture_o8ww1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phyax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duc2v")
 }],
-"loop": true,
-"name": &"on",
-"speed": 5.0
+"loop": false,
+"name": &"turn_off",
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -70,15 +80,13 @@ size = Vector2(14, 14)
 size = Vector2(14, 14)
 
 [node name="LightBox" type="StaticBody2D"]
-script = ExtResource("1_e35c7")
+script = ExtResource("1_q7qh4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_o8ww1")
-animation = &"turn_on"
-autoplay = "off"
-frame = 3
-frame_progress = 1.0
+animation = &"turn_off"
+autoplay = "turn_off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bfhw2be3mlbyt"]
 
-[ext_resource type="Script" path="res://scripts/button.gd" id="1_rhj8v"]
+[ext_resource type="Script" uid="uid://to4lao20jsy6" path="res://scripts/button.gd" id="1_rhj8v"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_3q610"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rhj8v"]

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_qpwj6"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_ibugp"]
-[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/next_level_door.tscn" id="3_8qukl"]
-[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/reset_level_door.tscn" id="4_3p04p"]
+[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_8qukl"]
+[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_3p04p"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_qsp8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brxtv"]

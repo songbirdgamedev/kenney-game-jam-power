@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8miem7rjpgn1"]
+
+[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="1_tm3si"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0adx"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob3oq"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3cro"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1ycv"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvxrd"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qp35q"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_go0rc"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m6rb"]
+atlas = ExtResource("1_tm3si")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymrex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0adx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob3oq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3cro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1ycv")
+}],
+"loop": false,
+"name": &"turn_off",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvxrd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qp35q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_go0rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m6rb")
+}],
+"loop": false,
+"name": &"turn_on",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5igs"]
+size = Vector2(14, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5l3r8"]
+b = Vector2(-20, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_577eq"]
+b = Vector2(20, 20)
+
+[node name="CrossLightBox" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_ymrex")
+animation = &"turn_off"
+autoplay = "turn_off"
+frame = 3
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_l5igs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Diagonal1" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(10, -18)
+shape = SubResource("SegmentShape2D_5l3r8")
+debug_color = Color(0.70931, 0.480153, 0.22089, 0.42)
+
+[node name="Diagonal2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, -18)
+shape = SubResource("SegmentShape2D_577eq")
+debug_color = Color(0.704146, 0.482115, 0.242067, 0.42)

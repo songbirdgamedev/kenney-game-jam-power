@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://c8foaxkrcxhbn"]
+
+[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="1_nx6vn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h74c6"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg03a"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4w74q"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o4h5"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3wmo"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epj1k"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo57v"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klyxo"]
+atlas = ExtResource("1_nx6vn")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcr81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h74c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yg03a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4w74q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o4h5")
+}],
+"loop": false,
+"name": &"turn_off",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3wmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epj1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo57v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klyxo")
+}],
+"loop": false,
+"name": &"turn_on",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vot8u"]
+size = Vector2(14, 14)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_pgbfk"]
+b = Vector2(0, 20)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_h74c6"]
+b = Vector2(20, 0)
+
+[node name="CircleLightBox" type="StaticBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_mcr81")
+animation = &"turn_on"
+autoplay = "turn_off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vot8u")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Vertical" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -18)
+shape = SubResource("SegmentShape2D_pgbfk")
+debug_color = Color(0.667336, 0.506125, 0.192918, 0.42)
+
+[node name="Horizontal" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-10, -8)
+shape = SubResource("SegmentShape2D_h74c6")
+debug_color = Color(0.705165, 0.481961, 0.234254, 0.42)

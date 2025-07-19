@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_6761a"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_sk5k4"]
-[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/next_level_door.tscn" id="3_oc4kc"]
-[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/reset_level_door.tscn" id="4_s8va5"]
+[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_oc4kc"]
+[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_s8va5"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_dga24"]
-[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/action_light_box.tscn" id="6_s8va5"]
-[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/light_box.tscn" id="7_dga24"]
-[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights.gd" id="7_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="6_s8va5"]
+[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="7_dga24"]
+[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="8_qxy0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxy0u"]
