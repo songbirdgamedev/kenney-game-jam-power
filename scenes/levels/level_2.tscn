@@ -2093,5 +2093,5 @@ position = Vector2(168, 112)
 [node name="LightBox3" parent="Lights" instance=ExtResource("9_nt80m")]
 position = Vector2(200, 80)
 
-[connection signal="button_pressed" from="Button" to="Lights/ActionLightBox" method="turn_on"]
+[connection signal="button_pressed" from="Button" to="Lights/ActionLightBox" method="turn_on_off"]
 [connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]

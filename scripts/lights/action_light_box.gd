@@ -1,15 +1,23 @@
-extends StaticBody2D
+class_name ActionLightBox
+extends LightBox
 
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var big_box: CollisionShape2D = $Area2D/BigBox
 
 
-signal turned_on()
-
-
-func turn_on() -> void:
+func _turn_on() -> void:
+	is_on = true
 	animated_sprite.play("turn_on")
+	big_box.set_deferred("disabled", false)
+
 	await get_tree().create_timer(0.5).timeout
-	collision_shape.set_deferred("disabled", false)
 	turned_on.emit()
+
+
+func _turn_off() -> void:
+	is_on = false
+	animated_sprite.play("turn_off")
+	big_box.set_deferred("disabled", false)
+
+	await get_tree().create_timer(0.5).timeout
+	turned_off.emit()

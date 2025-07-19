@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://f1mmmks5drmq"]
+[gd_scene load_steps=16 format=3 uid="uid://f1mmmks5drmq"]
 
 [ext_resource type="Script" uid="uid://n31jc4hact0r" path="res://scripts/lights/action_light_box.gd" id="1_vhg83"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_v7yby"]
@@ -76,6 +76,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_phyax"]
 size = Vector2(14, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhg83"]
+size = Vector2(14, 14)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkf8y"]
 
 [node name="ActionLightBox" type="StaticBody2D"]
@@ -93,7 +96,12 @@ shape = SubResource("RectangleShape2D_phyax")
 
 [node name="Area2D" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="Box" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vhg83")
+debug_color = Color(0.707829, 0.480383, 0.232914, 0.42)
+
+[node name="BigBox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_pkf8y")
 disabled = true
