@@ -19,8 +19,5 @@ func _on_body_exited(body: Node2D) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if (
-		event.is_action_pressed("interact") and
-		reset_level_door.has_overlapping_bodies()
-	):
+	if event.is_action_pressed("interact") and input_prompt.visible:
 		get_tree().reload_current_scene()
