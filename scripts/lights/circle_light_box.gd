@@ -12,7 +12,7 @@ extends StaticBody2D
 signal turned_on()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if box_area.has_overlapping_areas():
 		turn_on()
 

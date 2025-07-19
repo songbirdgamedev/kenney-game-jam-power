@@ -1,17 +1,18 @@
-[gd_scene load_steps=16 format=4 uid="uid://dwhlm6c0s0gdv"]
+[gd_scene load_steps=17 format=4 uid="uid://d137oywww3ent"]
 
-[ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_6761a"]
-[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_sk5k4"]
-[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_oc4kc"]
-[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_s8va5"]
-[ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_dga24"]
-[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="6_s8va5"]
-[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="7_dga24"]
-[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_qxy0u"]
-[ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="8_qxy0u"]
+[ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_2bnyt"]
+[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_n6eey"]
+[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_qi5uv"]
+[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_f6egh"]
+[ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_t4txi"]
+[ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_apo5x"]
+[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_josfm"]
+[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="8_lgrx1"]
+[ext_resource type="PackedScene" uid="uid://b8miem7rjpgn1" path="res://scenes/lights/cross_light_box.tscn" id="9_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_vmg1d"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxy0u"]
-texture = ExtResource("1_6761a")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brxtv"]
+texture = ExtResource("1_2bnyt")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -618,8 +619,8 @@ texture = ExtResource("1_6761a")
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_excbq"]
-texture = ExtResource("2_sk5k4")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv7cl"]
+texture = ExtResource("2_n6eey")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1017,13 +1018,13 @@ texture = ExtResource("2_sk5k4")
 18:19/0 = 0
 19:19/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_iav0o"]
+[sub_resource type="TileSet" id="TileSet_r88tb"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_qxy0u")
-sources/2 = SubResource("TileSetAtlasSource_excbq")
+sources/1 = SubResource("TileSetAtlasSource_brxtv")
+sources/2 = SubResource("TileSetAtlasSource_tv7cl")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dnkej"]
-texture = ExtResource("1_6761a")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yj8c"]
+texture = ExtResource("1_2bnyt")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1630,8 +1631,8 @@ texture = ExtResource("1_6761a")
 19:19/0 = 0
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mm8aj"]
-texture = ExtResource("2_sk5k4")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndlae"]
+texture = ExtResource("2_n6eey")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -2029,67 +2030,68 @@ texture = ExtResource("2_sk5k4")
 18:19/0 = 0
 19:19/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_wtwp4"]
+[sub_resource type="TileSet" id="TileSet_v8d84"]
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_dnkej")
-sources/2 = SubResource("TileSetAtlasSource_mm8aj")
+sources/1 = SubResource("TileSetAtlasSource_1yj8c")
+sources/2 = SubResource("TileSetAtlasSource_ndlae")
 
-[node name="Level1" type="Node2D"]
+[node name="Level2" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAAAAAAAAABAAoAAQAAAAAAAAABAAsAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAACAAYAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAACAAoAAQAAAAAAAAACAAsAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAADAAkAAQAAAAAAAAADAAoAAQAAAAAAAAADAAsAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAAEAAkAAQAAAAAAAAAEAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAkAAQAAAAAAAAAFAAoAAQAAAAAAAAAFAAsAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAQAAAAAAAAAGAAkAAQAAAAAAAAAGAAoAAQAAAAAAAAAGAAsAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAkAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAsAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAIAAoAAQAAAAAAAAAIAAsAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAAsAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAgAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAQAAAAAAAAALAAAAAQAAAAAAAAALAAEAAQAAAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAALAAsAAQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQAAAAAAAAAMAAsAAQAAAAAAAAANAAAAAQAAAAAAAAANAAEAAQAAAAAAAAANAAIAAQAAAAAAAAANAAMAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAANAAcAAQAAAAAAAAANAAgAAQAAAAAAAAANAAkAAQAAAAAAAAANAAoAAQAAAAAAAAANAAsAAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAOAAkAAQAAAAAAAAAOAAoAAQAAAAAAAAAOAAsAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAQAAAAAAAAAPAAkAAQAAAAAAAAAPAAoAAQAAAAAAAAAPAAsAAQAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAMAAQAAAAAAAAAQAAQAAQAAAAAAAAAQAAUAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAsAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAAAAAARAAMAAQAAAAAAAAARAAQAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAARAAgAAQAAAAAAAAARAAkAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQAAAAAAAAASAAAAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQAAAAAAAAASAAMAAQAAAAAAAAASAAQAAQAAAAAAAAASAAUAAQAAAAAAAAASAAYAAQAAAAAAAAASAAcAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAASAAoAAQAAAAAAAAASAAsAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAATAAcAAQAAAAAAAAATAAgAAQAAAAAAAAATAAkAAQAAAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAA=")
-tile_set = SubResource("TileSet_iav0o")
+tile_set = SubResource("TileSet_r88tb")
 
 [node name="Main" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAATAAAAAQATAA8AAAATAAEAAQAPAA4AAAATAAIAAQAPAA4AAAATAAMAAQAPAA4AAAATAAQAAQAPAA4AAAATAAUAAQAPAA4AAAATAAYAAQAPAA4AAAATAAcAAQAPAA4AAAATAAgAAQAPAA4AAAATAAkAAQAPAA4AAAATAAoAAQATABAAAAAAAAAAAQATAA4AAAAAAAEAAQARAA4AAAAAAAIAAQARAA4AAAAAAAMAAQARAA4AAAAAAAQAAQARAA4AAAAAAAUAAQARAA4AAAAAAAYAAQARAA4AAAAAAAcAAQARAA4AAAAAAAgAAQARAA4AAAAAAAkAAQARAA4AAAABAAAAAQAQAA8AAAACAAAAAQAQAA8AAAADAAAAAQAQAA8AAAAEAAAAAQAQAA8AAAAFAAAAAQAQAA8AAAAGAAAAAQAQAA8AAAAHAAAAAQAQAA8AAAAIAAAAAQAQAA8AAAAJAAAAAQAQAA8AAAAKAAAAAQAQAA8AAAALAAAAAQAQAA8AAAAMAAAAAQAQAA8AAAANAAAAAQAQAA8AAAAOAAAAAQAQAA8AAAAPAAAAAQAQAA8AAAAQAAAAAQAQAA8AAAARAAAAAQAQAA8AAAASAAAAAQAQAA8AAAABAAoAAQAQAA0AAAACAAoAAQAQAA0AAAADAAoAAQAQAA0AAAAEAAoAAQAQAA0AAAAFAAoAAQAQAA0AAAAGAAoAAQAQAA0AAAAHAAoAAQAQAA0AAAAIAAoAAQAQAA0AAAAJAAoAAQAQAA0AAAAKAAoAAQAQAA0AAAALAAoAAQAQAA0AAAAMAAoAAQAQAA0AAAANAAoAAQAQAA0AAAAOAAoAAQAQAA0AAAAPAAoAAQAQAA0AAAAQAAoAAQAQAA0AAAARAAoAAQAQAA0AAAASAAoAAQAQAA0AAAAAAAoAAQATAA0AAAA=")
-tile_set = SubResource("TileSet_wtwp4")
+tile_set = SubResource("TileSet_v8d84")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
-[node name="NextLevelDoor" parent="." instance=ExtResource("3_oc4kc")]
+[node name="NextLevelDoor" parent="." instance=ExtResource("3_qi5uv")]
 position = Vector2(280, 160)
 
-[node name="ResetLevelDoor" parent="." instance=ExtResource("4_s8va5")]
+[node name="ResetLevelDoor" parent="." instance=ExtResource("4_f6egh")]
 position = Vector2(40, 160)
 
-[node name="Player" parent="." instance=ExtResource("5_dga24")]
+[node name="Player" parent="." instance=ExtResource("5_t4txi")]
 position = Vector2(56, 160)
 
-[node name="Button" parent="." instance=ExtResource("8_qxy0u")]
-position = Vector2(160, 160)
+[node name="Button" parent="." instance=ExtResource("6_apo5x")]
+position = Vector2(104, 160)
 
 [node name="Lights" type="Node2D" parent="."]
-position = Vector2(0, -16)
-script = ExtResource("7_qxy0u")
-metadata/_edit_group_ = true
+script = ExtResource("7_josfm")
 
-[node name="ActionLightBox" parent="Lights" instance=ExtResource("6_s8va5")]
-position = Vector2(160, 96)
+[node name="ActionLightBox" parent="Lights" instance=ExtResource("8_lgrx1")]
+position = Vector2(120, 64)
 
-[node name="LightBox" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(160, 80)
+[node name="CrossLightBox" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(136, 48)
 
-[node name="LightBox2" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(176, 96)
+[node name="CrossLightBox2" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(152, 64)
 
-[node name="LightBox3" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(176, 80)
+[node name="CrossLightBox3" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(168, 80)
 
-[node name="LightBox4" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(144, 80)
+[node name="CrossLightBox4" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(184, 64)
 
-[node name="LightBox5" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(144, 96)
+[node name="LightBox" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(200, 48)
 
-[node name="LightBox6" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(144, 112)
+[node name="CrossLightBox5" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(152, 96)
 
-[node name="LightBox7" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(160, 112)
+[node name="CrossLightBox6" parent="Lights" instance=ExtResource("9_2bnyt")]
+position = Vector2(184, 96)
 
-[node name="LightBox8" parent="Lights" instance=ExtResource("7_dga24")]
-position = Vector2(176, 112)
+[node name="LightBox2" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(136, 112)
+
+[node name="LightBox3" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(200, 112)
 
 [connection signal="button_pressed" from="Button" to="Lights/ActionLightBox" method="turn_on"]
 [connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]
