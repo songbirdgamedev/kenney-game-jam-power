@@ -1,0 +1,73 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgyg2hgondto8"]
+
+[ext_resource type="Texture2D" uid="uid://c1jwycecto31e" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent.png" id="1_iplx1"]
+[ext_resource type="Script" uid="uid://cguvuyeynasqi" path="res://scripts/next_level_door.gd" id="1_yphqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yphqt"]
+atlas = ExtResource("1_iplx1")
+region = Rect2(272, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qxk8"]
+atlas = ExtResource("1_iplx1")
+region = Rect2(272, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cutrx"]
+atlas = ExtResource("1_iplx1")
+region = Rect2(306, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dui37"]
+atlas = ExtResource("1_iplx1")
+region = Rect2(323, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pii2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yphqt")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qxk8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cutrx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dui37")
+}],
+"loop": false,
+"name": &"open",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6vtbs"]
+size = Vector2(16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yphqt"]
+size = Vector2(10, 13)
+
+[node name="NextLevelDoor" type="StaticBody2D"]
+script = ExtResource("1_yphqt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_pii2p")
+animation = &"open"
+autoplay = "closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_6vtbs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_yphqt")
+debug_color = Color(0.787048, 0.373555, 0.569831, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
