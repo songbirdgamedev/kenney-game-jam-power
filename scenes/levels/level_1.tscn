@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dwhlm6c0s0gdv"]
+[gd_scene load_steps=16 format=4 uid="uid://dwhlm6c0s0gdv"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_6761a"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_sk5k4"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_dga24"]
 [ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/action_light_box.tscn" id="6_s8va5"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/light_box.tscn" id="7_dga24"]
+[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights.gd" id="7_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="8_qxy0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qxy0u"]
@@ -2060,6 +2061,7 @@ position = Vector2(160, 80)
 
 [node name="Lights" type="Node2D" parent="."]
 position = Vector2(0, -16)
+script = ExtResource("7_qxy0u")
 metadata/_edit_group_ = true
 
 [node name="LightBox" parent="Lights" instance=ExtResource("7_dga24")]
@@ -2089,4 +2091,6 @@ position = Vector2(176, 112)
 [node name="Button" parent="." instance=ExtResource("8_qxy0u")]
 position = Vector2(160, 160)
 
+[connection signal="turned_on" from="ActionLightBox" to="Lights" method="are_all_lights_on"]
+[connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]
 [connection signal="button_pressed" from="Button" to="ActionLightBox" method="turn_on"]

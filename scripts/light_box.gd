@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var box_area: Area2D = $Area2D
 
-var is_on = false
+@export var is_on: bool = false
 
 
 func _process(_delta: float) -> void:
