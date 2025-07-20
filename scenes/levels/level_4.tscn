@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://cwm8lr6qybfvj"]
+[gd_scene load_steps=16 format=4 uid="uid://cwm8lr6qybfvj"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_glw47"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_4wsov"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_hsvsk"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_fcb7b"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_ov8fk"]
-[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_pmra4"]
 [ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="8_1bx01"]
 [ext_resource type="PackedScene" uid="uid://c8foaxkrcxhbn" path="res://scenes/lights/circle_light_box.tscn" id="10_glw47"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_xt2o7"]
@@ -2069,7 +2068,6 @@ position = Vector2(192, 160)
 position = Vector2(160, 160)
 
 [node name="Lights" type="Node2D" parent="."]
-script = ExtResource("7_pmra4")
 
 [node name="CircleLightBox" parent="Lights" instance=ExtResource("10_glw47")]
 position = Vector2(160, 80)
@@ -2119,4 +2117,3 @@ position = Vector2(192, 96)
 [connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
 [connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox2" method="_on_button_press"]
 [connection signal="button_pressed" from="Buttons/Button3" to="Lights/CircleLightBox" method="_on_button_press"]
-[connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]

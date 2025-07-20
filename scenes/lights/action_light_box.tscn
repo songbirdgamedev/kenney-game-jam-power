@@ -104,5 +104,4 @@ debug_color = Color(0.707829, 0.480383, 0.232914, 0.42)
 [node name="BigBox" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_pkf8y")
-disabled = true
 debug_color = Color(0.640818, 0.521198, 0.162989, 0.42)

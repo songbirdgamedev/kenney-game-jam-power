@@ -1038,11 +1038,12 @@ position = Vector2(56, 128)
 [node name="Button" parent="." instance=ExtResource("4_65guy")]
 position = Vector2(120, 160)
 
-[node name="ActionLightBox" parent="." instance=ExtResource("5_p6rmu")]
-position = Vector2(200, 96)
-
 [node name="NextLevelDoor" parent="." instance=ExtResource("6_34hum")]
 position = Vector2(280, 160)
 
-[connection signal="button_pressed" from="Button" to="ActionLightBox" method="_on_button_press"]
-[connection signal="turned_on" from="ActionLightBox" to="NextLevelDoor" method="open_door"]
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="ActionLightBox" parent="Lights" instance=ExtResource("5_p6rmu")]
+position = Vector2(200, 96)
+
+[connection signal="button_pressed" from="Button" to="Lights/ActionLightBox" method="_on_button_press"]

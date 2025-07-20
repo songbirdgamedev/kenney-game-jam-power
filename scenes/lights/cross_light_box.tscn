@@ -109,11 +109,9 @@ debug_color = Color(0.735859, 0.466272, 0.14734, 0.42)
 [node name="DiagonalUp" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(128, -136)
 shape = SubResource("SegmentShape2D_5l3r8")
-disabled = true
 debug_color = Color(0.70931, 0.480153, 0.22089, 0.42)
 
 [node name="DiagonalDown" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-128, -136)
 shape = SubResource("SegmentShape2D_577eq")
-disabled = true
 debug_color = Color(0.704146, 0.482115, 0.242067, 0.42)

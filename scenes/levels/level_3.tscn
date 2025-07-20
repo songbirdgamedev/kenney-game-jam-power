@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://d137oywww3ent"]
+[gd_scene load_steps=15 format=4 uid="uid://d137oywww3ent"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_2bnyt"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_n6eey"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_f6egh"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_t4txi"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_apo5x"]
-[ext_resource type="Script" uid="uid://btrhk776rcij4" path="res://scripts/lights/lights.gd" id="7_josfm"]
 [ext_resource type="PackedScene" uid="uid://b8miem7rjpgn1" path="res://scenes/lights/cross_light_box.tscn" id="9_2bnyt"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_vmg1d"]
 
@@ -2062,7 +2061,6 @@ position = Vector2(56, 160)
 position = Vector2(160, 160)
 
 [node name="Lights" type="Node2D" parent="."]
-script = ExtResource("7_josfm")
 
 [node name="CrossLightBox" parent="Lights" instance=ExtResource("9_2bnyt")]
 position = Vector2(160, 80)
@@ -2092,4 +2090,3 @@ position = Vector2(128, 112)
 position = Vector2(192, 112)
 
 [connection signal="button_pressed" from="Buttons/Button" to="Lights/CrossLightBox" method="_on_button_press"]
-[connection signal="all_lights_on" from="Lights" to="NextLevelDoor" method="open_door"]
