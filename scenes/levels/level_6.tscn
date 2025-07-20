@@ -1,16 +1,17 @@
-[gd_scene load_steps=15 format=4 uid="uid://cwm8lr6qybfvj"]
+[gd_scene load_steps=16 format=4 uid="uid://c2kjesxagc0i8"]
 
-[ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_glw47"]
-[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_4wsov"]
-[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_qvnao"]
-[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_hsvsk"]
-[ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_fcb7b"]
-[ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_ov8fk"]
-[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="8_1bx01"]
-[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_xt2o7"]
+[ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_b6i88"]
+[ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_e18e5"]
+[ext_resource type="PackedScene" uid="uid://bgyg2hgondto8" path="res://scenes/doors/next_level_door.tscn" id="3_m5qie"]
+[ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_kydov"]
+[ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_uwlxl"]
+[ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_4wfvb"]
+[ext_resource type="PackedScene" uid="uid://c8foaxkrcxhbn" path="res://scenes/lights/circle_light_box.tscn" id="7_tqv5a"]
+[ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="8_ppjov"]
+[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="9_e18e5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brxtv"]
-texture = ExtResource("1_glw47")
+texture = ExtResource("1_b6i88")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -618,7 +619,7 @@ texture = ExtResource("1_glw47")
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tv7cl"]
-texture = ExtResource("2_4wsov")
+texture = ExtResource("2_e18e5")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -1022,7 +1023,7 @@ sources/1 = SubResource("TileSetAtlasSource_brxtv")
 sources/2 = SubResource("TileSetAtlasSource_tv7cl")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1yj8c"]
-texture = ExtResource("1_glw47")
+texture = ExtResource("1_b6i88")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1630,7 +1631,7 @@ texture = ExtResource("1_glw47")
 19:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndlae"]
-texture = ExtResource("2_4wsov")
+texture = ExtResource("2_e18e5")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -2033,7 +2034,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_1yj8c")
 sources/2 = SubResource("TileSetAtlasSource_ndlae")
 
-[node name="Level2" type="Node2D"]
+[node name="Level6" type="Node2D"]
 
 [node name="Background" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAABAAIAAQAAAAAAAAABAAMAAQAAAAAAAAABAAQAAQAAAAAAAAABAAUAAQAAAAAAAAABAAYAAQAAAAAAAAABAAcAAQAAAAAAAAABAAgAAQAAAAAAAAABAAkAAQAAAAAAAAABAAoAAQAAAAAAAAABAAsAAQAAAAAAAAACAAAAAQAAAAAAAAACAAEAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAACAAQAAQAAAAAAAAACAAUAAQAAAAAAAAACAAYAAQAAAAAAAAACAAcAAQAAAAAAAAACAAgAAQAAAAAAAAACAAkAAQAAAAAAAAACAAoAAQAAAAAAAAACAAsAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAADAAIAAQAAAAAAAAADAAMAAQAAAAAAAAADAAQAAQAAAAAAAAADAAUAAQAAAAAAAAADAAYAAQAAAAAAAAADAAcAAQAAAAAAAAADAAgAAQAAAAAAAAADAAkAAQAAAAAAAAADAAoAAQAAAAAAAAADAAsAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAQAAQAAAAAAAAAEAAUAAQAAAAAAAAAEAAYAAQAAAAAAAAAEAAcAAQAAAAAAAAAEAAgAAQAAAAAAAAAEAAkAAQAAAAAAAAAEAAoAAQAAAAAAAAAEAAsAAQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAFAAMAAQAAAAAAAAAFAAQAAQAAAAAAAAAFAAUAAQAAAAAAAAAFAAYAAQAAAAAAAAAFAAcAAQAAAAAAAAAFAAgAAQAAAAAAAAAFAAkAAQAAAAAAAAAFAAoAAQAAAAAAAAAFAAsAAQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAQAAQAAAAAAAAAGAAUAAQAAAAAAAAAGAAYAAQAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAQAAAAAAAAAGAAkAAQAAAAAAAAAGAAoAAQAAAAAAAAAGAAsAAQAAAAAAAAAHAAAAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAHAAMAAQAAAAAAAAAHAAQAAQAAAAAAAAAHAAUAAQAAAAAAAAAHAAYAAQAAAAAAAAAHAAcAAQAAAAAAAAAHAAgAAQAAAAAAAAAHAAkAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAsAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAMAAQAAAAAAAAAIAAQAAQAAAAAAAAAIAAUAAQAAAAAAAAAIAAYAAQAAAAAAAAAIAAcAAQAAAAAAAAAIAAgAAQAAAAAAAAAIAAkAAQAAAAAAAAAIAAoAAQAAAAAAAAAIAAsAAQAAAAAAAAAJAAAAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAAAAAAJAAkAAQAAAAAAAAAJAAoAAQAAAAAAAAAJAAsAAQAAAAAAAAAKAAAAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAAKAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAAKAAcAAQAAAAAAAAAKAAgAAQAAAAAAAAAKAAkAAQAAAAAAAAAKAAoAAQAAAAAAAAAKAAsAAQAAAAAAAAALAAAAAQAAAAAAAAALAAEAAQAAAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAALAAUAAQAAAAAAAAALAAYAAQAAAAAAAAALAAcAAQAAAAAAAAALAAgAAQAAAAAAAAALAAkAAQAAAAAAAAALAAoAAQAAAAAAAAALAAsAAQAAAAAAAAAMAAAAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAMAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAAMAAYAAQAAAAAAAAAMAAcAAQAAAAAAAAAMAAgAAQAAAAAAAAAMAAkAAQAAAAAAAAAMAAoAAQAAAAAAAAAMAAsAAQAAAAAAAAANAAAAAQAAAAAAAAANAAEAAQAAAAAAAAANAAIAAQAAAAAAAAANAAMAAQAAAAAAAAANAAQAAQAAAAAAAAANAAUAAQAAAAAAAAANAAYAAQAAAAAAAAANAAcAAQAAAAAAAAANAAgAAQAAAAAAAAANAAkAAQAAAAAAAAANAAoAAQAAAAAAAAANAAsAAQAAAAAAAAAOAAAAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAIAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAQAAQAAAAAAAAAOAAUAAQAAAAAAAAAOAAYAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAOAAkAAQAAAAAAAAAOAAoAAQAAAAAAAAAOAAsAAQAAAAAAAAAPAAAAAQAAAAAAAAAPAAEAAQAAAAAAAAAPAAIAAQAAAAAAAAAPAAMAAQAAAAAAAAAPAAQAAQAAAAAAAAAPAAUAAQAAAAAAAAAPAAYAAQAAAAAAAAAPAAcAAQAAAAAAAAAPAAgAAQAAAAAAAAAPAAkAAQAAAAAAAAAPAAoAAQAAAAAAAAAPAAsAAQAAAAAAAAAQAAAAAQAAAAAAAAAQAAEAAQAAAAAAAAAQAAIAAQAAAAAAAAAQAAMAAQAAAAAAAAAQAAQAAQAAAAAAAAAQAAUAAQAAAAAAAAAQAAYAAQAAAAAAAAAQAAcAAQAAAAAAAAAQAAgAAQAAAAAAAAAQAAkAAQAAAAAAAAAQAAoAAQAAAAAAAAAQAAsAAQAAAAAAAAARAAAAAQAAAAAAAAARAAEAAQAAAAAAAAARAAIAAQAAAAAAAAARAAMAAQAAAAAAAAARAAQAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAARAAcAAQAAAAAAAAARAAgAAQAAAAAAAAARAAkAAQAAAAAAAAARAAoAAQAAAAAAAAARAAsAAQAAAAAAAAASAAAAAQAAAAAAAAASAAEAAQAAAAAAAAASAAIAAQAAAAAAAAASAAMAAQAAAAAAAAASAAQAAQAAAAAAAAASAAUAAQAAAAAAAAASAAYAAQAAAAAAAAASAAcAAQAAAAAAAAASAAgAAQAAAAAAAAASAAkAAQAAAAAAAAASAAoAAQAAAAAAAAASAAsAAQAAAAAAAAATAAAAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAATAAQAAQAAAAAAAAATAAUAAQAAAAAAAAATAAYAAQAAAAAAAAATAAcAAQAAAAAAAAATAAgAAQAAAAAAAAATAAkAAQAAAAAAAAATAAoAAQAAAAAAAAATAAsAAQAAAAAAAAA=")
@@ -2046,39 +2047,78 @@ tile_set = SubResource("TileSet_v8d84")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(160, 90)
 
-[node name="NextLevelDoor" parent="." instance=ExtResource("3_qvnao")]
+[node name="NextLevelDoor" parent="." instance=ExtResource("3_m5qie")]
 position = Vector2(280, 160)
 
-[node name="ResetLevelDoor" parent="." instance=ExtResource("4_hsvsk")]
+[node name="ResetLevelDoor" parent="." instance=ExtResource("4_kydov")]
 position = Vector2(40, 160)
 
-[node name="Player" parent="." instance=ExtResource("5_fcb7b")]
+[node name="Player" parent="." instance=ExtResource("5_uwlxl")]
 position = Vector2(56, 160)
 
 [node name="Buttons" type="Node2D" parent="."]
 
-[node name="Button" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(144, 160)
+[node name="Button" parent="Buttons" instance=ExtResource("6_4wfvb")]
+position = Vector2(160, 160)
 
-[node name="Button2" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(176, 160)
+[node name="Button2" parent="Buttons" instance=ExtResource("6_4wfvb")]
+position = Vector2(128, 160)
+
+[node name="Button3" parent="Buttons" instance=ExtResource("6_4wfvb")]
+position = Vector2(192, 160)
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="ActionLightBox" parent="Lights" instance=ExtResource("8_1bx01")]
-position = Vector2(144, 80)
-
-[node name="ActionLightBox2" parent="Lights" instance=ExtResource("8_1bx01")]
-position = Vector2(176, 80)
-
-[node name="LightBox" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 64)
-
-[node name="LightBox2" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 80)
-
-[node name="LightBox3" parent="Lights" instance=ExtResource("10_xt2o7")]
+[node name="CircleLightBox" parent="Lights" instance=ExtResource("7_tqv5a")]
 position = Vector2(160, 96)
 
-[connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
-[connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox2" method="_on_button_press"]
+[node name="ActionLightBox" parent="Lights" instance=ExtResource("9_e18e5")]
+position = Vector2(144, 80)
+
+[node name="ActionLightBox2" parent="Lights" instance=ExtResource("9_e18e5")]
+position = Vector2(176, 64)
+
+[node name="LightBox" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(128, 64)
+
+[node name="LightBox2" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(144, 64)
+
+[node name="LightBox3" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(160, 48)
+
+[node name="LightBox4" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(128, 80)
+
+[node name="LightBox5" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(160, 64)
+is_on = true
+
+[node name="LightBox6" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(160, 80)
+is_on = true
+
+[node name="LightBox7" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(176, 80)
+
+[node name="LightBox8" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(176, 48)
+
+[node name="LightBox9" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(192, 48)
+
+[node name="LightBox10" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(192, 64)
+
+[node name="LightBox11" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(192, 80)
+
+[node name="LightBox12" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(128, 96)
+
+[node name="LightBox13" parent="Lights" instance=ExtResource("8_ppjov")]
+position = Vector2(144, 96)
+
+[connection signal="button_pressed" from="Buttons/Button" to="Lights/CircleLightBox" method="_on_button_press"]
+[connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox" method="_on_button_press"]
+[connection signal="button_pressed" from="Buttons/Button3" to="Lights/ActionLightBox2" method="_on_button_press"]

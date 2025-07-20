@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://d137oywww3ent"]
+[gd_scene load_steps=15 format=4 uid="uid://bkhxtwt34dxq0"]
 
 [ext_resource type="Texture2D" uid="uid://cher0hsookvms" path="res://assets/sprites/tilemap/monochrome_tilemap_packed.png" id="1_2bnyt"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_n6eey"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ndbwkjbs5knl" path="res://scenes/doors/reset_level_door.tscn" id="4_f6egh"]
 [ext_resource type="PackedScene" uid="uid://cvufp1w77fr3l" path="res://scenes/player.tscn" id="5_t4txi"]
 [ext_resource type="PackedScene" uid="uid://bfhw2be3mlbyt" path="res://scenes/button.tscn" id="6_apo5x"]
-[ext_resource type="PackedScene" uid="uid://b8miem7rjpgn1" path="res://scenes/lights/cross_light_box.tscn" id="9_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://f1mmmks5drmq" path="res://scenes/lights/action_light_box.tscn" id="7_ugcn1"]
 [ext_resource type="PackedScene" uid="uid://dll1oho5dtiyk" path="res://scenes/lights/light_box.tscn" id="10_vmg1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_brxtv"]
@@ -2058,35 +2058,61 @@ position = Vector2(56, 160)
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button" parent="Buttons" instance=ExtResource("6_apo5x")]
+position = Vector2(128, 160)
+
+[node name="Button2" parent="Buttons" instance=ExtResource("6_apo5x")]
 position = Vector2(160, 160)
+
+[node name="Button3" parent="Buttons" instance=ExtResource("6_apo5x")]
+position = Vector2(192, 160)
 
 [node name="Lights" type="Node2D" parent="."]
 
-[node name="CrossLightBox" parent="Lights" instance=ExtResource("9_2bnyt")]
+[node name="ActionLightBox" parent="Lights" instance=ExtResource("7_ugcn1")]
+position = Vector2(128, 80)
+
+[node name="ActionLightBox2" parent="Lights" instance=ExtResource("7_ugcn1")]
 position = Vector2(160, 80)
+
+[node name="ActionLightBox3" parent="Lights" instance=ExtResource("7_ugcn1")]
+position = Vector2(192, 80)
 
 [node name="LightBox" parent="Lights" instance=ExtResource("10_vmg1d")]
 position = Vector2(144, 64)
 
 [node name="LightBox2" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(176, 64)
+position = Vector2(144, 80)
 
 [node name="LightBox3" parent="Lights" instance=ExtResource("10_vmg1d")]
 position = Vector2(144, 96)
 
 [node name="LightBox4" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(176, 96)
+position = Vector2(176, 64)
 
 [node name="LightBox5" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(128, 48)
+position = Vector2(176, 80)
 
 [node name="LightBox6" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(192, 48)
+position = Vector2(176, 96)
 
 [node name="LightBox7" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(128, 112)
+position = Vector2(112, 64)
 
 [node name="LightBox8" parent="Lights" instance=ExtResource("10_vmg1d")]
-position = Vector2(192, 112)
+position = Vector2(112, 80)
 
-[connection signal="button_pressed" from="Buttons/Button" to="Lights/CrossLightBox" method="_on_button_press"]
+[node name="LightBox9" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(112, 96)
+
+[node name="LightBox10" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(208, 64)
+
+[node name="LightBox11" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(208, 80)
+
+[node name="LightBox12" parent="Lights" instance=ExtResource("10_vmg1d")]
+position = Vector2(208, 96)
+
+[connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
+[connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox2" method="_on_button_press"]
+[connection signal="button_pressed" from="Buttons/Button3" to="Lights/ActionLightBox3" method="_on_button_press"]
