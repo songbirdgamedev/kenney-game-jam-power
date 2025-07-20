@@ -73,7 +73,7 @@ script = ExtResource("1_rhj8v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_t81cg")
-animation = &"unpress"
+animation = &"press"
 autoplay = "unpress"
 
 [node name="CollisionShapeDefault" type="CollisionShape2D" parent="."]

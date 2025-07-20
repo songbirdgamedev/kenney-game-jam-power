@@ -4,12 +4,15 @@ extends StaticBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+@export var is_open: bool = false
+
 
 const FILE_PATH: String = "res://scenes/levels/level_"
 const FILE_EXTENSION: String = ".tscn"
 
 
 func open_door() -> void:
+	is_open = true
 	animated_sprite.play("open")
 	collision_shape.set_deferred("disabled", true)
 
