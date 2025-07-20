@@ -2058,85 +2058,52 @@ position = Vector2(56, 160)
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="Button" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(128, 160)
+position = Vector2(136, 160)
 
 [node name="Button2" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(160, 160)
-
-[node name="Button3" parent="Buttons" instance=ExtResource("6_ov8fk")]
-position = Vector2(192, 160)
+position = Vector2(184, 160)
 
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="ActionLightBox" parent="Lights" instance=ExtResource("8_1bx01")]
-position = Vector2(128, 80)
+position = Vector2(152, 80)
 
 [node name="ActionLightBox2" parent="Lights" instance=ExtResource("8_1bx01")]
-position = Vector2(160, 80)
-
-[node name="ActionLightBox3" parent="Lights" instance=ExtResource("8_1bx01")]
-position = Vector2(192, 80)
+position = Vector2(168, 80)
 
 [node name="LightBox" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(112, 80)
+position = Vector2(136, 64)
 
 [node name="LightBox2" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(112, 64)
+position = Vector2(152, 64)
+is_on = true
 
 [node name="LightBox3" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(128, 64)
+position = Vector2(168, 64)
+is_on = true
 
 [node name="LightBox4" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(144, 64)
-is_on = true
+position = Vector2(184, 64)
 
 [node name="LightBox5" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(144, 80)
-is_on = true
+position = Vector2(184, 80)
 
 [node name="LightBox6" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(144, 96)
-is_on = true
+position = Vector2(184, 96)
 
 [node name="LightBox7" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(128, 96)
+position = Vector2(168, 96)
+is_on = true
 
 [node name="LightBox8" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(112, 96)
+position = Vector2(136, 80)
 
 [node name="LightBox9" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(176, 64)
-is_on = true
+position = Vector2(136, 96)
 
 [node name="LightBox10" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(192, 64)
-
-[node name="LightBox11" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(208, 64)
-
-[node name="LightBox12" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(208, 80)
-
-[node name="LightBox13" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(176, 80)
+position = Vector2(152, 96)
 is_on = true
-
-[node name="LightBox14" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 96)
-
-[node name="LightBox15" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(176, 96)
-is_on = true
-
-[node name="LightBox16" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(192, 96)
-
-[node name="LightBox17" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(208, 96)
-
-[node name="LightBox18" parent="Lights" instance=ExtResource("10_xt2o7")]
-position = Vector2(160, 64)
 
 [connection signal="button_pressed" from="Buttons/Button" to="Lights/ActionLightBox" method="_on_button_press"]
 [connection signal="button_pressed" from="Buttons/Button2" to="Lights/ActionLightBox2" method="_on_button_press"]
-[connection signal="button_pressed" from="Buttons/Button3" to="Lights/ActionLightBox3" method="_on_button_press"]

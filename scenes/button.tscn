@@ -1,11 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfhw2be3mlbyt"]
+[gd_scene load_steps=13 format=3 uid="uid://bfhw2be3mlbyt"]
 
 [ext_resource type="Script" uid="uid://to4lao20jsy6" path="res://scripts/button.gd" id="1_rhj8v"]
 [ext_resource type="Texture2D" uid="uid://5c18p7spiav6" path="res://assets/sprites/tilemap/monochrome_tilemap_transparent_packed.png" id="2_3q610"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhj8v"]
-atlas = ExtResource("2_3q610")
-region = Rect2(80, 128, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i7y4x"]
 atlas = ExtResource("2_3q610")
@@ -19,16 +15,20 @@ region = Rect2(64, 128, 16, 16)
 atlas = ExtResource("2_3q610")
 region = Rect2(48, 128, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhj8v"]
+atlas = ExtResource("2_3q610")
+region = Rect2(48, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q610"]
+atlas = ExtResource("2_3q610")
+region = Rect2(64, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t81cg"]
+atlas = ExtResource("2_3q610")
+region = Rect2(80, 128, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_t81cg"]
 animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rhj8v")
-}],
-"loop": false,
-"name": &"idle",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i7y4x")
@@ -41,6 +41,20 @@ animations = [{
 }],
 "loop": false,
 "name": &"press",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhj8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q610")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t81cg")
+}],
+"loop": false,
+"name": &"unpress",
 "speed": 10.0
 }]
 
@@ -59,8 +73,8 @@ script = ExtResource("1_rhj8v")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_t81cg")
-animation = &"press"
-autoplay = "idle"
+animation = &"unpress"
+autoplay = "unpress"
 
 [node name="CollisionShapeDefault" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -78,3 +92,4 @@ shape = SubResource("SegmentShape2D_iw4ej")
 debug_color = Color(0.748691, 0.318767, 0.835682, 0.42)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_button_press"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

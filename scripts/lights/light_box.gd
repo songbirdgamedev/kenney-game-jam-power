@@ -17,38 +17,34 @@ func _ready() -> void:
 
 
 func _on_button_press() -> void:
+	if _all_lights_on():
+		return
+
 	await get_tree().create_timer(0.1).timeout
 	await turn_on_off()
 	print("finished")
-	#await get_tree().create_timer(0.5).timeout
-	_are_all_lights_on()
+	await get_tree().create_timer(0.5).timeout
+
+	if _all_lights_on():
+		await get_tree().create_timer(0.5).timeout
+		next_level_door.open_door()
 
 
 func turn_on_off() -> void:
 	if is_on:
-		_turn_off()
-	else:
-		_turn_on()
-
-	await get_tree().create_timer(0.5).timeout
-
-	for light in light_area.get_overlapping_bodies():
-		if light != self and light is LightBox:
-			light.turn_on_off()
-
-
-func _turn_on() -> void:
-	is_on = true
-	animated_sprite.play("turn_on")
-
-
-func _turn_off() -> void:
-	is_on = false
-	animated_sprite.play("turn_off")
-
-
-func _are_all_lights_on() -> void:
-	print("checking")
-	if lights.get_children().all(func(light): return light.is_on):
+		is_on = false
+		animated_sprite.play("turn_off")
 		await get_tree().create_timer(0.5).timeout
-		next_level_door.open_door()
+	else:
+		is_on = true
+		animated_sprite.play("turn_on")
+		await get_tree().create_timer(0.5).timeout
+
+		for light in light_area.get_overlapping_bodies():
+			if light != self and light is LightBox:
+				light.turn_on_off()
+
+
+func _all_lights_on() -> bool:
+	print("checking")
+	return lights.get_children().all(func(light): return light.is_on)
