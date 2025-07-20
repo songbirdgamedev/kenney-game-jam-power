@@ -14,6 +14,7 @@ const FILE_EXTENSION: String = ".tscn"
 func open_door() -> void:
 	is_open = true
 	animated_sprite.play("open")
+	await animated_sprite.animation_finished
 	collision_shape.set_deferred("disabled", true)
 
 
